@@ -49,10 +49,11 @@
         font-size: 20px;
     }
     .r-ent .title {
-        margin: 0 5ex;
+        margin: 0 2ex;
     }
     .r-ent .meta {
-        margin: 0 0 0 5ex;
+        margin: 0 2ex 0 2ex;
+        padding: 6px;
     }
 
     .m-ent {
