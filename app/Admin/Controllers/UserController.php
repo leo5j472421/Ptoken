@@ -24,8 +24,8 @@ class UserController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('用戶管理');
+            $content->description('資訊');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class UserController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('用戶管理');
+            $content->description('修改');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class UserController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('用戶管理');
+            $content->description('新增');
 
             $content->body($this->form());
         });
@@ -74,6 +74,10 @@ class UserController extends Controller
         return Admin::grid(User::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
+            $grid->name('Name')->sortable();
+            $grid->email('Email')->sortable();
+            $grid->token('Ptoken')->sortable();
+            $grid->pcoin('Pcoin')->sortable();
 
             $grid->created_at();
             $grid->updated_at();
@@ -90,6 +94,11 @@ class UserController extends Controller
         return Admin::form(User::class, function (Form $form) {
 
             $form->display('id', 'ID');
+            $form->text('name', 'Name');
+            $form->email('email', 'Email');
+            $form->text('token', 'Ptoken');
+            $form->text('pcoin', 'Pcoin');
+            $form->password('password', 'Password');
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');

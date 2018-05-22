@@ -24,8 +24,8 @@ class TransactionController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('token申請管理');
+            $content->description('資訊');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class TransactionController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('token申請管理');
+            $content->description('修改');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class TransactionController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('token申請管理');
+            $content->description('新增');
 
             $content->body($this->form());
         });
@@ -74,6 +74,11 @@ class TransactionController extends Controller
         return Admin::grid(Transaction::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
+            $grid->user_id('User ID')->sortable();
+            $grid->state('State')->sortable();
+            $grid->address('Address')->sortable();
+            $grid->token('token')->sortable();
+            $grid->pcoin('Pcoin')->sortable();
 
             $grid->created_at();
             $grid->updated_at();
@@ -90,6 +95,11 @@ class TransactionController extends Controller
         return Admin::form(Transaction::class, function (Form $form) {
 
             $form->display('id', 'ID');
+            $form->text('user_id', 'User ID');
+            $form->select('state', 'State')->options(['done' => 'done', 'pending' => 'pending']);
+            $form->text('address', 'Address');
+            $form->text('token', 'token');
+            $form->text('pcoin', 'Pcoin');
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
