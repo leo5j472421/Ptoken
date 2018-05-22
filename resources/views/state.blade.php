@@ -12,7 +12,7 @@
             </div>
             
             <div class="meta">
-                <div class="author"> {{$tran['token']}}  {{$tran['address']}}</div>
+                <div class="author"> :{{$tran['token']}}  :{{$tran['address']}}</div>
                 <div class="date"> {{$tran['created_at']}}</div>
             </div>
         </div>   

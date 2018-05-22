@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/state', 'HomeController@state')->name('state');
-Route::get('/addTrans', 'HomeController@save')->name('index');
+Route::post('/addTrans', 'HomeController@save')->name('index');

@@ -9,7 +9,8 @@
                     <span>p 幣 : </span>                    
                     <span>{{$user->pcoin}}</span>
                 </div>
-                <form action="addTrans">
+                <form action="addTrans" method="POST">
+                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <div class="meta m-list-container">
                     <span class="author">輸入 eth 地址 : </span>
                     <div class="search-bar">
@@ -24,7 +25,7 @@
                 </div>
 
                 <div class="btn-group meta b-list-container">
-                    <input type="submit" class="btn" value="轉換 token">
+                    <input type="submit" class="btn" value="轉換 token" style="margin-left: 2.5ex;">
                 </div> 
                 </form>               
             </div>
