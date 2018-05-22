@@ -19,14 +19,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/bbs-common.css">
-    <link rel="stylesheet" type="text/css" href="css/bbs-base.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/bbs-custom.css">
-    <link rel="stylesheet" type="text/css" href="css/pushstream.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/bbs-print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="/css/bbs-common.css">
+    <link rel="stylesheet" type="text/css" href="/css/bbs-base.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/bbs-custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/pushstream.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/css/bbs-print.css" media="print">
    
-    <script src="css/jquery.min.js"></script>
-    <script src="css/bbs.js"></script>   
+    <script src="/css/jquery.min.js"></script>
+    <script src="/css/bbs.js"></script>   
 </head>
 <body>
     <div id="app">
