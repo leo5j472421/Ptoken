@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Transaction;
+
 
 class HomeController extends Controller
 {
@@ -26,12 +28,17 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
+        dd($user);
         return view('home', compact('user'));
     }
 
     public function state()
     {
-        return view('state');
+        $user = Auth::user();
+        $userid = $user->id;
+        $transcations = Transaction::where('user_id',$userid)->get()->toArray();
+        //$transcations = Transaction::all();
+        return view('state',compact('transcations'));
     }
 
         public function form()
