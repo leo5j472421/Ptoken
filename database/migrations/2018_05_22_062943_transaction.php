@@ -19,8 +19,8 @@ class Transaction extends Migration
             $table->string('state');
             $table->string('address');
             $table->float('token')->default(0.0);
-            $table->integer('pcoin')->default(0);
-            $table->timestamp('created_at')->nullable();
+            $table->integer('pcoin')->default(1000);
+            $table->timestamps();
         });
     }
 

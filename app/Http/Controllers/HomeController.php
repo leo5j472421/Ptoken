@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Transaction;
-
+use Carbon\Carbon as Carbon;
 
 class HomeController extends Controller
 {
@@ -40,8 +40,25 @@ class HomeController extends Controller
         return view('state',compact('transcations'));
     }
 
-        public function form()
+    public function save(Request $request)
     {
-        return view('form');
+        $user = Auth::user();
+        $userid = $user->id;
+        if ( $user->pcoin < (int)$request->pcoin )
+            return 'P幣不足';
+        else {
+            $newtrans = new Transaction;
+            $newtrans->user_id = $userid;
+            $newtrans->state = 'done';
+            $newtrans->address = $request->address ;
+            $newtrans->token = (float)$request->pcoin * 1000;
+            $newtrans->pcoin = (int)$request->pcoin;
+            $newtrans->created_at = Carbon::now();
+            $user->pcoin -= $newtrans->pcoin;
+            $user->save();
+            $newtrans->save();
+        }
+        $transcations = Transaction::where('user_id',$userid)->get()->toArray();
+        return view('state',compact('transcations'));
     }
 }
