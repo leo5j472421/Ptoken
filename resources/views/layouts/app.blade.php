@@ -19,26 +19,30 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bbs-common.css">
+    <link rel="stylesheet" type="text/css" href="css/bbs-base.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/bbs-custom.css">
+    <link rel="stylesheet" type="text/css" href="css/pushstream.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/bbs-print.css" media="print">
+   
+    <script src="css/jquery.min.js"></script>
+    <script src="css/bbs.js"></script>   
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+        <div id="topbar-container">
+            <div id="topbar" class="bbs-content">
+                <a id="logo" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto right small">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto right small">
                         <!-- Authentication Links -->
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -63,10 +67,9 @@
                             </li>
                         @endguest
                     </ul>
-                </div>
+                </div>                
             </div>
-        </nav>
-
+        </div>      
         <main class="py-4">
             @yield('content')
         </main>
