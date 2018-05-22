@@ -3,25 +3,45 @@
 @section('content')
 
     <div id="main-container">
+        <div id="action-bar-container">
+            <div class="action-bar">
+                <div class="btn-group btn-group-dir">
+                    <a class="btn selected" href="/">申請</a>
+                    <a class="btn" href="/state">狀態</a>
+                </div>
+            </div>
+        </div>
         <div class="r-list-container action-bar-margin bbs-screen">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="r-ent">
                 <div class="meta">
-                    <span>p 幣 : </span>                    
+                    <span>P 幣 : </span>                    
                     <span>{{$user->pcoin}}</span>
                 </div>
                 <form action="addTrans" method="POST">
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <div class="meta m-list-container">
-                    <span class="author">輸入 eth 地址 : </span>
+                    <span class="author">錢包地址 : </span>
                     <div class="search-bar">
                     <input class="query" type="text" name="address" value="" placeholder="XXXXX">
                     </div>                   
                 </div>
                 <div class="meta m-list-container">
-                    <span class="author"> 輸入 P 幣 : </span>
+                    <span class="author">P 幣數量 : </span>
                     <div class="search-bar">
                     <input class="query" type="text" name="pcoin" value="" placeholder="XXXXX">
                     </div>                   
+                </div>
+                <div class="meta m-list-container">
+                    <span class="author">兌換數量 : 0</span>             
                 </div>
 
                 <div class="btn-group meta b-list-container">

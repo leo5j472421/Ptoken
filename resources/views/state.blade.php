@@ -2,6 +2,14 @@
 
 @section('content')
 <div class="main-container">
+    <div id="action-bar-container">
+        <div class="action-bar">
+            <div class="btn-group btn-group-dir">
+                <a class="btn" href="/">申請</a>
+                <a class="btn selected" href="/state">狀態</a>
+            </div>
+        </div>
+    </div>
     <div class="r-list-container action-bar-margin bbs-screen">
         @foreach ($transcations as $tran)
         <div class="r-ent">
@@ -12,7 +20,7 @@
             </div>
             
             <div class="meta">
-                <div class="author"> :{{$tran['token']}}  :{{$tran['address']}}</div>
+                <div class="author"> ptoken:{{$tran['token']}}  addr:{{$tran['address']}}</div>
                 <div class="date"> {{$tran['created_at']}}</div>
             </div>
         </div>   
