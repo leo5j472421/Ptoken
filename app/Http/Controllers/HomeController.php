@@ -42,10 +42,15 @@ class HomeController extends Controller
 
     public function save(Request $request)
     {
+        $request = $request->validate([
+            'address' => 'required|regex:/0x[a-fA-F0-9]{40}/',
+            'pcoin' => 'required',
+        ]);
+
         $user = Auth::user();
         $userid = $user->id;
-        if ( $user->pcoin < (int)$request->pcoin )
-            return 'P幣不足';
+        if ( $user->pcoin < (int)$request['pcoin'] )
+            return back()->withErrors('P幣不足');
         else {
             $newtrans = new Transaction;
             $newtrans->user_id = $userid;
