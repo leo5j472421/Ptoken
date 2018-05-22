@@ -7,7 +7,7 @@
             <div class="r-ent">
                 <div class="meta">
                     <span>p 幣 : </span>                    
-                    <span>23</span>
+                    <span>{{$user->ptoken}}</span>
                 </div>
                 <div class="meta m-list-container">
                     <span class="author">輸入 eth 地址 : </span>

@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/statue', 'HomeController@statue')->name('statue');
+Route::get('/state', 'HomeController@state')->name('state');
+Route::get('/form', 'HomeController@form')->name('form');
