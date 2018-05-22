@@ -512,3 +512,16 @@ img {
 	line-height: 120%;
 	vertical-align: middle;
 }
+
+/* flexbox */
+    
+.flex-row-align-center{
+    display: flex;
+    align-items: center;
+    flex-direction: row;        
+}
+
+.login-link{
+	margin-right: 10px;
+}
+
