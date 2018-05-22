@@ -44,7 +44,7 @@ class HomeController extends Controller
     {
         $request = $request->validate([
             'address' => 'required|regex:/0x[a-fA-F0-9]{40}/',
-            'pcoin' => 'required',
+            'pcoin' => 'required|numeric',
         ]);
 
         $user = Auth::user();

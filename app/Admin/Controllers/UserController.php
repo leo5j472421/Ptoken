@@ -94,14 +94,31 @@ class UserController extends Controller
         return Admin::form(User::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('name', 'Name');
+            $form->text('name', '名稱');
             $form->email('email', 'Email');
-            $form->text('token', 'Ptoken');
-            $form->text('pcoin', 'Pcoin');
-            $form->password('password', 'Password');
+            $form->number('token', 'Ptoken');
+            $form->number('pcoin', 'Pcoin');
+
+            $form->password('password', '密碼')->rules('required|confirmed')
+                ->default(function ($form) {
+                    return $form->model()->password;
+                });
+            $form->password('password_confirmation', '密碼確認')->rules('required')
+                ->default(function ($form) {
+                    return $form->model()->password;
+                });
+            $form->ignore(['password_confirmation']);
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
+
+            
+            $form->saving(function (Form $form) {
+                if ($form->password && $form->model()->password != $form->password) {
+                    $form->password = bcrypt($form->password);
+                }
+            });
+
         });
     }
 }

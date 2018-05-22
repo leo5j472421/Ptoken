@@ -95,11 +95,11 @@ class TransactionController extends Controller
         return Admin::form(Transaction::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('user_id', 'User ID');
+            $form->number('user_id', 'User ID');
             $form->select('state', 'State')->options(['done' => 'done', 'pending' => 'pending']);
             $form->text('address', 'Address');
-            $form->text('token', 'token');
-            $form->text('pcoin', 'Pcoin');
+            $form->number('token', 'token');
+            $form->number('pcoin', 'Pcoin');
 
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
