@@ -2120,6 +2120,7 @@ select.form-control:focus::-ms-value {
     border: 1px solid #666;
     background-color: #333;
     outline: none;
+    color: #ccc;
 }
 
 .col-form-label {
