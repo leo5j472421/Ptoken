@@ -2049,7 +2049,7 @@ pre code {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: .25rem;
+    /*border-radius: .25rem;*/
     -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -2066,8 +2066,8 @@ pre code {
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
-    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+/*    -webkit-box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)*/
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2105,6 +2105,21 @@ select.form-control:focus::-ms-value {
 .form-control-range {
     display: block;
     width: 100%
+}
+
+.query {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    border: 1px solid #333;
+    background-color: #222;
+    padding: 0.8ex;
+    color: #ccc;
+}
+.query:focus {
+    border: 1px solid #666;
+    background-color: #333;
+    outline: none;
 }
 
 .col-form-label {
@@ -4662,10 +4677,11 @@ tbody.collapse.show {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #111;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem
+    border-radius: .25rem;
+    color: #fff;
 }
 
 .card>hr {
@@ -4714,8 +4730,8 @@ tbody.collapse.show {
 .card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125)
+    background-color: rgb(35, 35, 35);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 .card-header:first-child {
