@@ -18,8 +18,8 @@ class Transaction extends Migration
             $table->integer('user_id');
             $table->string('state');
             $table->string('address');
-            $table->float('eth')->default(0.0);
-            $table->integer('ptoken')->default(0);
+            $table->float('token')->default(0.0);
+            $table->integer('pcoin')->default(0);
             $table->timestamp('created_at')->nullable();
         });
     }

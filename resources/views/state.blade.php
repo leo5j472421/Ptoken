@@ -8,11 +8,11 @@
             <div class="title">
                 <span>[ {{$tran['state']}} ]</span>
                 <span>P幣 :</span>
-                <span>{{$tran['ptoken']}}</span>
+                <span>{{$tran['pcoin']}}</span>
             </div>
             
             <div class="meta">
-                <div class="author"> {{$tran['eth']}}  {{$tran['address']}}</div>
+                <div class="author"> {{$tran['token']}}  {{$tran['address']}}</div>
                 <div class="date"> {{$tran['created_at']}}</div>
             </div>
         </div>   

@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     		'user_id' => 1,
     		'state' => 'done',
     		'address' => '0xced68a2ecc46ae4a6d546b646f488e787a9',
-    		'eth' => 1043.25,
-    		'ptoken' => 6666,
+    		'token' => 1043.25,
+    		'pcoin' => 6666,
     		'created_at' => Carbon::now()
     	]);
     }

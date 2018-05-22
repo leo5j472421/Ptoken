@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->float('eth')->default(0.0);
-            $table->integer('ptoken')->default(0);
+            $table->float('token')->default(0.0);
+            $table->integer('pcoin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
