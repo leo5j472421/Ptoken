@@ -6,13 +6,13 @@
         @foreach ($transcations as $tran)
         <div class="r-ent">
             <div class="title">
-             
-
-                <span>[ {{$tran['state']}} ] {{$tran['eth']}}</span>
+                <span>[ {{$tran['state']}} ]</span>
+                <span>P幣 :</span>
+                <span>{{$tran['ptoken']}}</span>
             </div>
-            {{$tran['address']}}
+            
             <div class="meta">
-                <div class="author">{{$tran['ptoken']}}</div>
+                <div class="author"> {{$tran['eth']}}  {{$tran['address']}}</div>
                 <div class="date"> {{$tran['created_at']}}</div>
             </div>
         </div>   
