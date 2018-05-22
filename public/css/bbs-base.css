@@ -354,6 +354,7 @@ img {
 /* board list table */
 .b-list-container {
 	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .b-ent {
     position: relative;
