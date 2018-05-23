@@ -55,9 +55,9 @@ class HomeController extends Controller
             $newtrans = new Transaction;
             $newtrans->user_id = $userid;
             $newtrans->state = 'done';
-            $newtrans->address = $request->address ;
-            $newtrans->token = (float)$request->pcoin * 1000;
-            $newtrans->pcoin = (int)$request->pcoin;
+            $newtrans->address = $request['address'] ;
+            $newtrans->token = (float)$request['pcoin'] * 1000;
+            $newtrans->pcoin = (int)$request['pcoin'];
             $newtrans->created_at = Carbon::now();
             $user->pcoin -= $newtrans->pcoin;
             $user->save();

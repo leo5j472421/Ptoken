@@ -14,5 +14,6 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/state', 'HomeController@state')->name('state');
 Route::post('/addTrans', 'HomeController@save')->name('index');
