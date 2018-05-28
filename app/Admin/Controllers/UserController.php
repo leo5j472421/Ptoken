@@ -74,8 +74,9 @@ class UserController extends Controller
         return Admin::grid(User::class, function (Grid $grid) {
 
             $grid->id('ID')->sortable();
-            $grid->name('Name')->sortable();
+            $grid->pttid('Pttid')->sortable();
             $grid->email('Email')->sortable();
+            $grid->address('Address')->sortable();
             $grid->token('Ptoken')->sortable();
             $grid->pcoin('Pcoin')->sortable();
 
@@ -94,8 +95,9 @@ class UserController extends Controller
         return Admin::form(User::class, function (Form $form) {
 
             $form->display('id', 'ID');
-            $form->text('name', '名稱');
+            $form->text('pttid', '名稱');
             $form->email('email', 'Email');
+            $form->text('address', 'Address');
             $form->number('token', 'Ptoken');
             $form->number('pcoin', 'Pcoin');
 

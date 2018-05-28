@@ -96,7 +96,7 @@ class TransactionController extends Controller
 
             $form->display('id', 'ID');
             $form->number('user_id', 'User ID');
-            $form->select('state', 'State')->options(['done' => 'done', 'pending' => 'pending']);
+            $form->select('state', 'State')->options(['done' => 'done', 'failed' => 'failed']);
             $form->text('address', 'Address');
             $form->number('token', 'token');
             $form->number('pcoin', 'Pcoin');
