@@ -11,6 +11,15 @@
         </div>
     </div>
     <div class="r-list-container action-bar-margin bbs-screen">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @foreach ($transcations as $tran)
         <div class="r-ent">
             <div class="title">
