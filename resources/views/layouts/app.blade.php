@@ -27,6 +27,7 @@
    
     <script src="/css/jquery.min.js"></script>
     <script src="/css/bbs.js"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
     <div id="app">
@@ -50,7 +51,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->pttid }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,5 +75,6 @@
             @yield('content')
         </main>
     </div>
+    @yield('js')
 </body>
 </html>
