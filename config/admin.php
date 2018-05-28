@@ -5,12 +5,12 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name' => 'Pcoin-admin',
+    'name' => 'FakePtt-admin',
 
     /*
      * Logo in admin panel header.
      */
-    'logo' => '<b>Pcoin</b> admin',
+    'logo' => '<b>FakePtt</b> admin',
 
     /*
      * Mini-logo in admin panel header.
@@ -42,7 +42,7 @@ return [
     /*
      * Use `https`.
      */
-    'secure' => false,
+    'secure' => true,
 
     /*
      * Laravel-admin auth setting.

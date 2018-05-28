@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('pttid')->unique();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('address')->unique()->default(null);
             $table->float('token')->default(0.0);
             $table->integer('pcoin')->default(0);
             $table->rememberToken();
